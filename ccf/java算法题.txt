@@ -1,20 +1,20 @@
-return new int[]{1,2,3};ֱ����return�����newһ��������󷵻أ��������ɵ��﷨��new ������{}����������ǣ�������[]
-����ĳ��ȣ�xxx.length�������Զ����Ƿ���
-����return���û��ִ����˵���Ҳ����⣬����return���֮��дthrow new IllegalArgumentException("No two sum solution");
-��ϣ�����Լӿ�����ٶȣ��������ٶȿ����ù�ϣ��������Ҫ���Ŀռ䣬��Ҫ�Ƚ�����ϣ�����ɽ������ɹ�ϣ�������鲻��ָ��ֵ���õ��±ֻ꣬�ܱ����±�����ѯ�Ƿ���ڸ�ֵ������ϣ������ָ����Ѹ���ҵ�ֵ��
-��ϣ����api��Map<������, ֵ����> map = new HashMap<>()��ֵ�����ǻ������ͣ�����int��char;map.put(k��v)��map.containsKey(k)��map.get(k)�Ҳ����򷵻�null��
-�ռ任ʱ�䣺��Ƕ��forѭ��for*for���for+for��Ҳ���ǰ�n*n���n+n����һ��for���ڽ���ĳ���ռ�ṹ�����ݽṹ�������緽����ҵı��������飬�ڶ���for�Ͳ��������
-�����ٶȾ�Ҫ����forѭ������Ը���߼��临�ӣ����÷ֲ�ṹ���ص���ͬʱ������£���һ��for��������߼���
- Math.pow(double m, double n) ����m��n�η�
-Python�е�ע����#������//
-����ÿ�ε��������ǻὫ�������10�����ʱ�临�Ӷ�Ϊ O(log10(n))
-��ð�ŵ�for�� for������ cc��c������c�е�ÿ��Ԫ�ظ���cc
-string��api��length(),charAt(),toCharArray(),substring(a,b)������b��sСд���Ǵ�д��Arrays.toString(�ַ�����)��ֱ���üӺ�ƴ�ӣ�str+=��xxxxx����str=str1+str2��Character.toString(c)��̬������
-switch(����){
-case ����ֵ1:
+return new int[]{1,2,3};直接在return语句中new一个数组对象返回，对象生成的语法：new 类型名{}，数组对象是：类型名[]
+数组的长度：xxx.length，是属性而不是方法
+若在return语句没有执行则说明找不到解，就在return语句之后写throw new IllegalArgumentException("No two sum solution");
+哈希表可以加快查找速度，想提升速度可以用哈希表，但需要消耗空间，需要先建立哈希表，可将数组变成哈希表，数组不能指定值来得到下标，只能遍历下标来查询是否存在该值，而哈希表可以指定键迅速找到值，
+哈希表的api：Map<键类型, 值类型> map = new HashMap<>()键值不能是基本类型，比如int，char;map.put(k，v)；map.containsKey(k)；map.get(k)找不到则返回null；
+空间换时间：把嵌套for循环for*for拆成for+for，也就是把n*n拆成n+n，第一个for用于建立某个空间结构（数据结构），比如方便查找的表或辅助数组，第二个for就操作这个表
+提升速度就要减少for循环，宁愿让逻辑变复杂，多用分叉结构，重点是同时做多件事，在一个for中做多个逻辑，
+ Math.pow(double m, double n) 是求m的n次方
+Python中的注释是#而不是//
+对于每次迭代，我们会将输入除以10，因此时间复杂度为 O(log10(n))
+用冒号的for， for（类型 cc：c）遍历c中的每个元素赋给cc
+string的api：length(),charAt(),toCharArray(),substring(a,b)不包括b，s小写不是大写；Arrays.toString(字符数组)；直接用加号拼接，str+=“xxxxx”，str=str1+str2；Character.toString(c)静态方法；
+switch(变量){
+case 变量值1:
     //;
     break;
-case ����ֵ2:
+case 变量值2:
     //...;
     break;
   ...
@@ -22,111 +22,111 @@ case default:
     //...;
     break;
 }
-swtich()��������ֻ����int��short��char��byte��enum����,������string�Ͷ���
-breakֻ���������ڲ�ѭ����.���ϣ������������ѭ��������Ҫ�����ѭ���ٴ�����Ϣ��Ʃ��һ������ֵ
-Arrays�ľ�̬����copyOfRange(int[] original, int from, int to)������Ƭ��������to��
-Stack stack = new Stack()��push ��item ����pop () �Ƴ�ջ������peek() �鿴ջ����������Ƴ�����boolean empty �����Զ�ջ�Ƿ�Ϊ��
-32λjava jdk ��64λeclipse���ܼ��ݣ�x86��32λ
-alt+/���벹ȫ��Ҫ��������Ȼ�ᱨ���Ҳ��ܴ�����ʾ��
-����֮��ʹ��=�Ž��и�ֵʱ�������ǵ�ַ��ֵ��ӵ�иõ�ַ�Ķ���ָ��õ�ַ��Ӧ�Ķ��󡣼����һ�Ĺ�ϵ��
-�����ڱ�����ListNode dummy = new ListNode(-1), cur = dummy;return dummy.next;����һ��ͷ��β��ֵһ��Ϊ�쳣ֵ������-1�������м�Ľڵ�Ϳ��������ƶ���
-�࿼�ǵݹ飺����ɲ�����ǰ����ͬ�Ĳ���������
-��ʡ�����д�����涨aһ������b������ͻ������������ܱ�֤aһ������b���Ͳ���Ҫif��else���������д�ˣ�
-��������ᵼ������Խ��
-�������˫ָ�뷨���������ͷָ�루��ָ�룩���ָ��ͬ���˶����쳣�����ָ��ͣס����ָ�����
-int c[] = {23,43,56,78};��int[] a= new int[4];
-java��������Ƕ��
-mid����ֱ����(tail-head)/2������head+(tail-head)/2���������head����mid����������
-int תstring��String.valueOf(i)��i+""���ַ����� stringתint��Integer.parseInt(s)
-��ʼ�ͽ����������߽���ѣ�
-�Ƚ������ظ���Ԫ�ؿ���ֻ��һ��ָ��res[i] == res[i + 1]��
-�����ı߽��������ֻ�㵽�����ڶ�λ���ٵ���̽�����һλwhile (i + 1 < res.size() && res[i] == res[i + 1])
-������Ǵ����ã�String��Integer, Double���⣬�����Ǵ�ֵ����ԭʼ���;��Ǵ�ֵ��
- ��������Ŀ��ʮ�а˾Ŷ��ǵݹ飬���ݹ�ĺ��ľ��ǲ�ͣ��DFS��Ҷ��㣬Ȼ���ڻ��ݻ�ȥ
-����������BST
-����������ݽṹ��Ϊ�˲��ظ�����ڵ㣬���Խ���һ�����ϣ������ʹ��Ľڵ�ŵ������У�
-ArrayList<Integer> ids = new ArrayList<Integer>();ids.size();ids.add(20);arr1.equals(arr2)�Ƚ����������ɱ������е�Ԫ���Ƿ�ȫ����ͬ��arrlist.clear()��գ� ArrayList.addAll(Collection<? extends E> c) �����Ὣ����ָ�������е�Ԫ�����ӵ����б��Ľ�β
-Collections.reverse(ArrayList) ��������з�ת
-˫�����LinkedList��ʵ����Queue�ӿڣ�������ǿ��԰�LinkedList����Queue���á���������ʱ����Ҫд��Queue��Queue<TreeNode> queue=new LinkedList<>();offer��ӣ�peek��poll���ӣ�size����,
-�����������Ҫ˼�룺 ���ݶ��г��ȼ�¼ÿ��Ԫ�ظ������Ӹ���ʼ���������Ժ��¼���г��ȣ���Ϊk����ǡ�þ͵��ڸո�ȫ����������е���һ���Ԫ�ظ�����Ȼ��ÿ��һ�ζӣ�K�ͼ�һ��ֱ��kΪ0����ʱ֮ǰ��һ��Ԫ����ȫ�������ˣ�������ʣ����ǡ������һ���ȫ��Ԫ�أ������ٻ�ȡ���г���
-                                                      k=0,  lklist.offer(root),while(!lklist.isEmpty()){if k==0 ��k=lklist.size();t=lklist.poll(),k--,lklist.offer(t.left��right)}  ���Ǵ��ϵ���
+swtich()变量类型只能是int、short、char、byte和enum类型,不能是string和对象
+break只是跳出最内层循环，.如果希望能跳出所有循环，你需要往外层循环再传递信息，譬如一个布尔值
+Arrays的静态方法copyOfRange(int[] original, int from, int to)数组切片，不包括to，
+Stack stack = new Stack()，push （item ），pop () 移除栈顶对象，peek() 查看栈顶对象而不移除它，boolean empty （测试堆栈是否为空
+32位java jdk 和64位eclipse不能兼容，x86是32位
+alt+/代码补全，要导包，不然会报错且不能代码提示，
+对象之间使用=号进行赋值时，赋的是地址的值，拥有该地址的都是指向该地址对应的对象。即多对一的关系。
+设置哨兵法：ListNode dummy = new ListNode(-1), cur = dummy;return dummy.next;新增一个头或尾，值一般为异常值，比如-1，这样中间的节点就可以自由移动了
+多考虑递归：后面可采用与前面相同的步骤来处理
+节省代码的写法：规定a一定大于b，否则就互换，这样就能保证a一定大于b，就不需要if，else分两种情况写了，
+各种情况会导致数组越界
+充分理解双指针法，正常情况头指针（慢指针）与快指针同步运动，异常情况慢指针停住，快指针继续
+int c[] = {23,43,56,78};　int[] a= new int[4];
+java方法不能嵌套
+mid不能直接是(tail-head)/2，而是head+(tail-head)/2，必须加上head才是mid是真正坐标
+int 转string：String.valueOf(i)或i+""空字符串， string转int：Integer.parseInt(s)
+开始和结束这两个边界很难，
+比较连续重复的元素可以只用一个指针res[i] == res[i + 1]，
+若担心边界问题可以只算到倒数第二位，再单独探索最后一位while (i + 1 < res.size() && res[i] == res[i + 1])
+对象就是传引用（String，Integer, Double例外，它们是传值），原始类型就是传值，
+ 玩树的题目，十有八九都是递归，而递归的核心就是不停的DFS到叶结点，然后在回溯回去
+二叉搜索树BST
+灵活运用数据结构：为了不重复计算节点，可以建立一个集合，将访问过的节点放到集合中，
+ArrayList<Integer> ids = new ArrayList<Integer>();ids.size();ids.add(20);arr1.equals(arr2)比较两个整数可变数组中的元素是否全部相同；arrlist.clear()清空， ArrayList.addAll(Collection<? extends E> c) 方法会将所有指定集合中的元素添加到此列表的结尾
+Collections.reverse(ArrayList) 将数组进行反转
+双向队列LinkedList类实现了Queue接口，因此我们可以把LinkedList当成Queue来用。创建对象时类型要写成Queue，Queue<TreeNode> queue=new LinkedList<>();offer入队，peek，poll出队，size（）,
+层序遍历的重要思想： 根据队列长度记录每层元素个数：从根开始，根进队以后记录队列长度，记为k，这恰好就等于刚刚全部进入队列中的那一层的元素个数，然后每出一次队，K就减一，直到k为0，此时之前那一层元素已全部出队了，队中所剩的是恰好是下一层的全部元素，这是再获取队列长度
+                                                      k=0,  lklist.offer(root),while(!lklist.isEmpty()){if k==0 则k=lklist.size();t=lklist.poll(),k--,lklist.offer(t.left与right)}  这是从上到下
 
-�����鷳����ͷ�ǵ��п�
-Math.max��a,b��;Integer.MAX_VALUE
-��ʱ�����뵽������ǲ����ܳ��ֵģ���Ϊ��������ǻ�����һ�����������һ�������Ȼ�����ˣ���ô����͸÷�����
-���Ե�����ͷ����ģ����β���ֱ߽����
+别嫌麻烦，开头记得判空
+Math.max（a,b）;Integer.MAX_VALUE
+有时候你想到的情况是不可能出现的，因为这种情况是基于上一种情况，而上一种情况既然出现了，那么程序就该返回了
+可以单独在头脑中模拟首尾两种边界情况
 
-����ͼ�ı�����������������������������DFS�͹����������BFS��BFS������Queueʵ�֣�DFS�����õݹ�ʵ�֣��ɸ�Ϊջʵ�֣�
-ͼ��������ȣ���ĳ���ڵ㣬���ѷ��ʹ����Ѵ�����ĳ�������У�����ֱ�ӷ��أ����򣬼���ü��ϣ����ѷ��ʱ�ǣ���Ȼ��������������ھӣ��ݹ���ñ�������ִ�и�֮ǰ��ͬ�Ĳ�����
-ʹ��switch-case�������׺��ӵľ���������ÿ��case�����������д��break������дbreak��ִ�����е�case�е����
-A.equals(B)���ж������ַ����Ƿ�ȫ��
- Scanner s = new Scanner(System.in);hasNextInt()��hasNext() ��hasNextLine()��next()��nextInt()��nextLine()
-ccf csp���ԣ�����packageһ�У������Ķ�����ճ����ȥ������������䣬��Ϊmain������Ϊmain�����Ϊsystem.out.print
-��scannerΪ�յ�ʱ���ȴ����룬��Ŀ��������涨�����У����������һ�У��س�����һ��������ڶ���
-int[][] arr=new int[n][2];�����в���д��С��new�в�д�Ҳ���С���ţ���ס��û��С����
-int[] arr = {45, 34, 53, 43}; Arrays.sort(arr);����
-map.values()�õ�map������ֵ��ɵ��б����Ϳ��Ա����ˣ�Ҫ��newһ��ArrayList<>()����������б�List<Integer> list=new ArrayList<>(map.values());ע���ʱ˳�򱻸ı�
-LinkedHashMap���ǰ�����ʱ��˳�������
-Character.isDigit�ж��ַ��Ƿ�Ϊ����
-ccf csp���ԣ�����ʱΪ�˷�����Խ�sysout.int�滻��д���ڴ�����������ύʱҪ�ǵøĻ���
-next() ����������һ����Ч�ַ����ǿո񣬷ǻ��з���ʱ����ʼɨ�裬��������һ���ָ����������(�ո���з�)ʱ������ɨ�裬��ȡɨ�赽�����ݣ�����õ�һ��ɨ�赽�Ĳ����ո񡢻��з��ĵ����ַ�����
-���ɨ������ɨ��������ж�ֹͣ�����ݾ��ǡ��հ׷������ո񰡣��س���ʲô�Ķ������ǿհ׷���
-nextInt()������ɨ�赽�հ׷���ʱ��Ὣǰ������ݶ�ȡ�ߣ����ᶪ�¿հ׷���\r���ڻ������У����ǣ�nextLine()������ɨ���ʱ��Ὣɨ�赽�Ŀհ׷�һͬ��������
-�ֲ�����Ҫ�����������������ھֲ��������ڱ𴦲�С�Ĵ�д������IDE����ʾ
+对于图的遍历的两大基本方法是深度优先搜索DFS和广度优先搜索BFS，BFS经常用Queue实现，DFS经常用递归实现（可改为栈实现）
+图的深度优先：对某个节点，若已访问过（已存在于某个集合中），就直接返回，否则，加入该集合（设已访问标记），然后遍历它的所有邻居，递归调用本函数（执行跟之前相同的操作）
+使用switch-case中最容易忽视的就是忘记在每个case后处理完后忘记写上break，若不写break则执行所有的case中的语句
+A.equals(B)，判断两个字符串是否全等
+ Scanner s = new Scanner(System.in);hasNextInt()，hasNext() ，hasNextLine()，next()，nextInt()，nextLine()
+ccf csp考试：除了package一行，其他的都复制粘贴过去，包括导包语句，类为main，方法为main，输出为system.out.print
+当scanner为空的时候会等待输入，题目输入如果规定是两行，就先输入第一行，回车，等一下再输入第二行
+int[][] arr=new int[n][2];类型中不用写大小，new中才写且不用小括号，记住，没有小括号
+int[] arr = {45, 34, 53, 43}; Arrays.sort(arr);排序
+map.values()得到map的所有值组成的列表，就可以遍历了，要先new一个ArrayList<>()来接收这个列表List<Integer> list=new ArrayList<>(map.values());注意此时顺序被改变
+LinkedHashMap就是按加入时的顺序遍历了
+Character.isDigit判断字符是否为数字
+ccf csp考试：测试时为了方便可以将sysout.int替换成写死在代码里，但复制提交时要记得改回来
+next() 方法遇见第一个有效字符（非空格，非换行符）时，开始扫描，当遇见第一个分隔符或结束符(空格或换行符)时，结束扫描，获取扫描到的内容，即获得第一个扫描到的不含空格、换行符的单个字符串。
+这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
+nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。
+局部变量要将它的作用域限制在局部，避免在别处不小心错写成它而IDE不提示
 
-Ҫ���ʣ��ݸ�ֽ
+要带笔，草稿纸
 
-ע�ⳬ���ڴ����ƣ�������������Ҫ�����飬���ݽṹ���ٿ����ٿ�
-stringbuilder�ɱ䣬���������
+注意超出内存限制：尽量不开不必要的数组，数据结构能少开就少开
+stringbuilder可变，用这个更好
 
-һ��Ҫ������������ģ��Լ����
-�������������������㣺1 �� n �� 1000��˵����Ҫ�������Ǳ߽��������
+一定要看评测用例规模与约定！
+　　所有评测用例满足：1 ≤ n ≤ 1000，说明需要单独考虑边界特殊情况
 
-�������ʽҪ����һ��������һ��
+正则表达式要在另一个类中试一下
 
-��ȡ���룬��������������ַ���������Ҫ��integer.valueof(nextline)������������������ַ���
-DecimalFormat df = new DecimalFormat( "0.00"); //����double����С�����λ����ʽ
+读取输入，如果数字下面是字符串则数字要用integer.valueof(nextline)，否则接下来读不到字符串
+DecimalFormat df = new DecimalFormat( "0.00"); //设置double类型小数点后位数格式
                double d1 = 2.1;
-                System.out.println(df.format(d1)); //�����2.10
-scan.hasnext��Ctrl+Z�Ž�������
-û����������ʾʱ��ô���ж�ȡ���ٷ��Ƽ�
+                System.out.println(df.format(d1)); //将输出2.10
+scan.hasnext按Ctrl+Z才结束输入
+没输入行数提示时怎么逐行读取：官方推荐
 scanner(system.in);
 while(sc.hasnextline){
 sc.nextline;
 }
 
-//���ַ�������ȡָ�����ַ���
+//从字符串中提取指定的字符串
 String s="ssfsfhshfsfjjs13293016789yfdiyifdsafyasif";
 
-//��д�������ʽ
+//书写正则表达式
 String regex="[1][34579]\\d{9}";
 
-//���������ʽת���������
+//将正则表达式转成正则对象
 Pattern pattern =Pattern.compile(regex);
 
-//����������ַ���ƥ��
+//正则对象与字符串匹配
 Matcher matcher=pattern.matcher(s);
-//ƥ��ɹ����ӡ���ҵ��Ľ��
+//匹配成功后打印出找到的结果
         
  
 while(matcher.find())
 {
 System.out.println(matcher.group());}}
 }
-������Ϊ��13293016789
-�������ʽ�������滻��������
+输出结果为：13293016789
+正则表达式：分组替换部分内容
 "2233(tag S) 11".replaceAll("(\\w+)\\(tag \\w+\\)","size:$1")
 
-������Ҫע����������һ�У������ǿ��У��������ܲ��ǿ��У���Ҫ�뵱Ȼ����Ϊ���ǿ���
-Ҫ��ȫ������input �����ٴ�����output�����������һ���������
-��try(Scanner scan=new Scanner(System.in);){
+第三题要注意输入的最后一行，可能是空行，但更可能不是空行，不要想当然的以为就是空行
+要先全部读入input 链表再处理到output链表，最后再一次性输出，
+用try(Scanner scan=new Scanner(System.in);){
 
 while(scan.hasNextLine()) {
   String	s=scan.nextLine();
 	input.add(s);}}
-����ʱ�Ȱ��س����ٰ�ctrl z�˳�ѭ��
+测试时先按回车，再按ctrl z退出循环
 
-if else�߼���֧�Ҿ�����������������������⣬�������ֲ��Ͻ�
+if else逻辑分支我经常出错，经常在这里出问题，条件划分不严谨
 
 Pattern p 
 =
@@ -158,14 +158,16 @@ while
 
 m.group()); 
 //
-��ӡ����
+打印所有
 
 
 m.group(1)                   
                   
 m.group( 2 )
 }
-��һ��ѭ�����ҵ�����123aa��m.group()Ҳ����m.group(0)����123aa��
-m.group(1)���ڵ�һ�������е����ݣ�Ҳ����123
-m.group(2)����aa
-�ڶ���ѭ�����ҵ�34345bb
+第一轮循环，找到的是123aa，m.group()也就是m.group(0)等于123aa，
+m.group(1)等于第一个括号中的内容，也就是123
+m.group(2)等于aa
+第二轮循环，找到34345bb
+
+trytoaddsomething
